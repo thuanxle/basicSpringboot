@@ -7,6 +7,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import antlr.Parser;
+
 @Entity
 @Table(	name = "users", 
 		uniqueConstraints = { 
@@ -83,5 +85,10 @@ public class User {
 	
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
+	}
+	
+	public String[] toArray() {
+		String[] userToArray = { String.valueOf(id), username, email };
+		return userToArray;
 	}
 }

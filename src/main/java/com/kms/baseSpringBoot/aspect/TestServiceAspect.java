@@ -43,14 +43,14 @@ public class TestServiceAspect {
 //        logger.info("Time Taken by {} is {}", joinPoint, timeTaken);
 //    }
 //
-//    @Around("@annotation(com.ldt.demospringaop.aspect.TrackTime)")
-//    public void aroundTrackTime(ProceedingJoinPoint joinPoint) throws Throwable {
-//
-//        Long startTime = System.currentTimeMillis();
-//        logger.info("Start Time Taken by {} is {}", joinPoint, startTime);
-//        joinPoint.proceed();
-//
-//        Long timeTaken = System.currentTimeMillis() - startTime;
-//        logger.info("Time Taken by {} is {}", joinPoint, timeTaken);
-//    }
+    @Around("@annotation(com.kms.baseSpringBoot.aspect.TrackTime)")
+    public void aroundTrackTime(ProceedingJoinPoint joinPoint) throws Throwable {
+
+        Long startTime = System.currentTimeMillis();
+        logger.info("Start Time Taken by {} is {}", joinPoint, startTime);
+        joinPoint.proceed();
+
+        Long timeTaken = System.currentTimeMillis() - startTime;
+        logger.info("Time Taken by {} is {}", joinPoint, timeTaken);
+    }
 }
